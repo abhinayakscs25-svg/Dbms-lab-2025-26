@@ -1,0 +1,35 @@
+create database newdatabase;
+USE newdatabase;
+CREATE TABLE STUDENT1 (
+    stdid INT, 
+    stdname VARCHAR(20), 
+    dob DATE, 
+    doj DATE, 
+    fee INT, 
+    gender CHAR(1)
+);
+DESC STUDENT1;
+
+INSERT INTO STUDENT1 (stdid, stdname, dob, doj, fee, gender)
+VALUES (1, 'SHAREEF', '2001-01-10', '2001-10-05', 10000, 'M');
+
+INSERT INTO STUDENT1 (stdid, stdname, dob, doj, fee, gender)
+VALUES (2, 'NADEEM', '2019-11-3', '2001-10-26', 11000, 'M');
+
+ALTER TABLE STUDENT1 ADD PH_NO VARCHAR(10);
+
+ALTER TABLE STUDENT1 CHANGE COLUMN PH_NO STUDENT1_NO VARCHAR(10);
+
+ALTER TABLE STUDENT1 RENAME TO STUDENTINFO;
+
+SELECT * FROM STUDENTINFO; 
+
+ALTER TABLE STUDENTINFO DROP COLUMN gender;
+ALTER TABLE STUDENTINFO ADD PRIMARY KEY (stdid);
+
+DELETE FROM STUDENTINFO WHERE stdid = '2';
+
+ update studentinfo
+ set student1_no='1234567890'
+ where stdid=1;
+ SELECT * FROM STUDENTINFO;
